@@ -1,15 +1,22 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ApiService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+  public getTimeAvailableTimezones(lat: string, long: string): Observable<any> {
+    const getTimeZoneUrl =
+      environment.apiBaseURL +
+      `/get-time-zone?key=${environment.apiKey}` +
+      `&format=json&by=position&lat=${lat}&lng=${long}`;
 
-  public getTimeAvailableTimezone(): Observable<any> {
-    return this.http.get('http://api.timezonedb.com/v2.1/list-time-zone');
+      console.log(getTimeZoneUrl);
+      
+    return this.http.get(getTimeZoneUrl);
   }
 }

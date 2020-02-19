@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  apiKey: 'R70X4LRKD3RM',
+  apiBaseURL: 'http://api.timezonedb.com/v2.1'
 };
 
 /*

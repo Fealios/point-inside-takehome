@@ -1,1 +1,16 @@
-<h1>Point Inside</h1>
+<div class="master">
+  <h2>Find my timezone</h2>
+  <div class="container">
+    <div class="child left">
+      <input [(ngModel)]="latitude" type="text" placeholder="latitude.." />
+      <span class="clear" (click)="clearLatitude()">x</span>
+    </div>
+    <div class="child right">
+      <input [(ngModel)]="longitude" type="text" placeholder="longitude.." />
+      <span class="clear" (click)="clearLongitude()">x</span>
+    </div>
+  </div>
+  <div>
+    <button class="find-button" (click)="getTimeZone()">Find</button>
+  </div>
+</div>
