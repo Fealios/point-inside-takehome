@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
 
 ## Running the Project
-From the top directory of the project, run npm install to retrieve all node packages.  Run ng serve to start up the local version of the app; it should be running on http://localhost:4200 now.  In your selected browser, please install a browser addon to bypass CORS so that you may actually retrieve the data from the API request.  You may now enter in valid coordinates into the two input fields.  
+From the top directory of the project, run npm install to retrieve all node packages.  Run ng serve to start up the local version of the app; it should be running on http://localhost:4200 now. Retrieve your apiKey from http://timezonedb.com and insert it into the environment file. In your selected browser, please install a browser addon to bypass CORS so that you may actually retrieve the data from the API request.  You may now enter in valid coordinates into the two input fields.  
 
 ## Strategy
 I chose to use two way data binding for the two input fields instead of using a form, either template driven or reactive, simply because I usually use reactive forms for this situation and wanted to do something different.  I am using some very basic validation checking, only to determine that the latitude and longitude variables actually have content, not what type they are, or any other formatting that might be required of coordinates.  I separated the method to do the validation checking out however, because I understand that this could be a need of the app in the future.  
