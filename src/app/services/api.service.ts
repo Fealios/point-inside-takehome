@@ -15,8 +15,6 @@ export class ApiService {
       `/get-time-zone?key=${environment.apiKey}` +
       `&format=json&by=position&lat=${lat}&lng=${long}`;
 
-      console.log(getTimeZoneUrl);
-      
     return this.http.get(getTimeZoneUrl);
   }
 }

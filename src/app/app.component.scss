@@ -45,6 +45,13 @@
     cursor: pointer;
 }
 
+.validate {
+    position: relative;
+    font-size: 12px;
+    color: red;
+    font-style: italic;
+}
+
 .find-button {
     cursor: pointer;
     width: 90px;

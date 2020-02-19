@@ -1,16 +1,25 @@
 <div class="master">
   <h2>Find my timezone</h2>
   <div class="container">
+
     <div class="child left">
-      <input [(ngModel)]="latitude" type="text" placeholder="latitude.." />
+      <input [(ngModel)]="latitude" type="text" placeholder="latitude.." (change)="validation = true"/>
       <span class="clear" (click)="clearLatitude()">x</span>
+      <div class="validate" *ngIf="validation && latitude.length < 1">Please enter a longitude</div>
     </div>
     <div class="child right">
-      <input [(ngModel)]="longitude" type="text" placeholder="longitude.." />
+      <input [(ngModel)]="longitude" type="text" placeholder="longitude.." (change)="validation = true"/>
       <span class="clear" (click)="clearLongitude()">x</span>
+      <div class="validate" *ngIf="validation && longitude.length < 1">Please enter a latitude</div>
     </div>
   </div>
+
   <div>
     <button class="find-button" (click)="getTimeZone()">Find</button>
+  </div>
+  
+  <div *ngIf="result">
+    <p *ngIf="result.status === 'OK'">Your local Timezone is {{result?.abbreviation}}, the time and date is {{result?.formatted}}</p>
+    <p *ngIf="result.status === 'FAILED'">There was an error processing your request, ERR: {{result.message}}</p>
   </div>
 </div>
